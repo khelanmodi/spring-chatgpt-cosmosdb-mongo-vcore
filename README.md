@@ -8,7 +8,7 @@ This application utilizes the following Azure resources:
 
 - [**Azure Spring Apps**](https://docs.microsoft.com/azure/spring-apps/) to host the application
 - [**Azure OpenAI**](https://docs.microsoft.com/azure/cognitive-services/openai/) for ChatGPT
-- [**Azure Cosmos DB**](https://learn.microsoft.com/azure/cosmos-db/mongodb/vcore/) as the vector store database.
+- [**Azure DocumentDB**](https://learn.microsoft.com/azure/documentdb/) as the vector store database.
 
 Here's a high level architecture diagram that illustrates these components.
 
@@ -38,7 +38,7 @@ The following prerequisites are required to use this application. Please ensure 
 
 - [Git](http://git-scm.com/).
 - [Java 17 or later](https://learn.microsoft.com/java/openjdk/install)
-- [Azure DocumentDB (with MongoDB compatibility) account](https://docs.microsoft.com/azure/cosmos-db/mongodb/vcore/create-account)
+- [Azure DocumentDB (with MongoDB compatibility) account](https://learn.microsoft.com/azure/documentdb/quickstart-portal)
 - An Azure OpenAI account (see more [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu))
 
 ### Quickstart
