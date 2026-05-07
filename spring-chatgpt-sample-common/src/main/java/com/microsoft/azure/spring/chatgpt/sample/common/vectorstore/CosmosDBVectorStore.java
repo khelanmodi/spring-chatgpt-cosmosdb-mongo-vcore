@@ -80,11 +80,11 @@ public class CosmosDBVectorStore implements VectorStore {
         String bsonCmd = "{\"createIndexes\":\"vectorstore\",\"indexes\":" +
                 "[{\"name\":\"vectorsearch\",\"key\":{\"embedding\":\"cosmosSearch\"},\"cosmosSearchOptions\":" +
                 "{\"kind\":\"vector-ivf\",\"numLists\":"+numLists+",\"similarity\":\""+similarity+"\",\"dimensions\":"+dimensions+"}}]}";
-        log.info("creating vector index in Cosmos DB Mongo vCore...");
+        log.info("creating vector index in Azure DocumentDB (with MongoDB compatibility)...");
         try {
             mongoTemplate.executeCommand(bsonCmd);
         } catch (Exception e) {
-            log.warn("Failed to create vector index in Cosmos DB Mongo vCore", e);
+            log.warn("Failed to create vector index in Azure DocumentDB", e);
         }
     }
 
@@ -108,10 +108,10 @@ public class CosmosDBVectorStore implements VectorStore {
             Document FirstDocFound = mongoTemplate.getDb().getCollection("vectorstore").find().first();
             if (FirstDocFound == null) {
                 try {
-                    log.info("Saving all documents to Cosmos DB Mongo vCore");
+                    log.info("Saving all documents to Azure DocumentDB");
                     mongoTemplate.insertAll(mongoEntities);
                 } catch (Exception e) {
-                    log.warn("Failed to insertAll documents to Cosmos DB Mongo vCore, attempting individual upserts", e);
+                    log.warn("Failed to insertAll documents to Azure DocumentDB, attempting individual upserts", e);
                     for (MongoEntity mongoEntity : mongoEntities) {
                         log.info("Saving document {} to mongoDB", mongoEntity.getId());
                         try {

@@ -38,7 +38,7 @@ The following prerequisites are required to use this application. Please ensure 
 
 - [Git](http://git-scm.com/).
 - [Java 17 or later](https://learn.microsoft.com/java/openjdk/install)
-- [Azure Cosmos DB Mongo vCore account](https://docs.microsoft.com/azure/cosmos-db/mongodb/vcore/create-account)
+- [Azure DocumentDB (with MongoDB compatibility) account](https://docs.microsoft.com/azure/cosmos-db/mongodb/vcore/create-account)
 - An Azure OpenAI account (see more [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu))
 
 ### Quickstart
@@ -52,9 +52,9 @@ The following prerequisites are required to use this application. Please ensure 
    set AZURE_OPENAI_ENDPOINT=<Your Azure OpenAI endpoint>
    set AZURE_OPENAI_APIKEY=<Your Azure OpenAI API key>
    set COSMOSDB_DATABASE=<Choose any database name>
-   set COSMOSDB_URI=<Cosmos DB Mongo vCore connection string>
-   set COSMOSDB_USERNAME=<Username you created for your Cosmos DB Mongo vCore cluster>
-   set COSMOSDB_PASSWORD=<Password you created for your Cosmos DB Mongo vCore cluster>
+   set COSMOSDB_URI=<Azure DocumentDB connection string>
+   set COSMOSDB_USERNAME=<Username you created for your Azure DocumentDB cluster>
+   set COSMOSDB_PASSWORD=<Password you created for your Azure DocumentDB cluster>
    ```
 
 3. Build the application:
@@ -63,7 +63,7 @@ The following prerequisites are required to use this application. Please ensure 
    mvn clean package
    ```  
 
-4. The following command will read and process your own private text documents, create a Cosmos DB Mongo vCore collection with vector index, and load the processed documents into it:
+4. The following command will read and process your own private text documents, create an Azure DocumentDB collection with vector index, and load the processed documents into it:
 
    ```shell
       java -jar spring-chatgpt-sample-cli/target/spring-chatgpt-sample-cli-0.0.1-SNAPSHOT.jar --from=C:/<path you your private text docs>
