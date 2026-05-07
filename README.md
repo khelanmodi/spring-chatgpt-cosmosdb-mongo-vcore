@@ -51,10 +51,10 @@ The following prerequisites are required to use this application. Please ensure 
    set AZURE_OPENAI_CHATDEPLOYMENTID=<Your Azure OpenAI chat deployment id>
    set AZURE_OPENAI_ENDPOINT=<Your Azure OpenAI endpoint>
    set AZURE_OPENAI_APIKEY=<Your Azure OpenAI API key>
-   set COSMOSDB_DATABASE=<Choose any database name>
-   set COSMOSDB_URI=<Azure DocumentDB connection string>
-   set COSMOSDB_USERNAME=<Username you created for your Azure DocumentDB cluster>
-   set COSMOSDB_PASSWORD=<Password you created for your Azure DocumentDB cluster>
+   set DOCUMENTDB_DATABASE=<Choose any database name>
+   set DOCUMENTDB_URI=<Azure DocumentDB connection string>
+   set DOCUMENTDB_USERNAME=<Username you created for your Azure DocumentDB cluster>
+   set DOCUMENTDB_PASSWORD=<Password you created for your Azure DocumentDB cluster>
    ```
 
 3. Build the application:
